@@ -9,7 +9,7 @@ Created on Sat Mar 19 12:45:08 2022
 import dash
 import plotly.express as px
 import plotly.graph_objects as go
-import pandas as pd 
+import pandas as pd
 from dash.dependencies import Input, Output
 from dash import dcc, html
 from flask import Flask
@@ -51,7 +51,7 @@ if __name__ == ('__main__'):
                     external_scripts=external_scripts,
                     server=server,
                     title="Daschboard - Wisconsin de cáncer de mama"
-                    ) 
+                    )
 else:
     app = dash.Dash(__name__,
                     external_stylesheets=external_stylesheets,
@@ -59,7 +59,7 @@ else:
                     server=server,
                     requests_pathname_prefix='/dashboard-cancer/',
                     title="Daschboard - Wisconsin de cáncer de mama"
-                    ) 
+                    )
 
 app.layout = html.Div([
     html.Div([
@@ -184,5 +184,4 @@ def generaDataHistogramaAcumulativo(datos, nBins):
     return data
 
 if __name__ == ('__main__'):
-    app.run_server(debug=True, port=8050)
-
+    app.run(debug=True, port=8050)
